@@ -7,6 +7,8 @@
 
 using namespace std;
 
+// Matrixless Gauss-Seidel Solver 
+
 class FluidQuantity {
 
 public: 
@@ -62,7 +64,68 @@ public:
 
 	}
 
+	void at(double x, double y) {} 
 
 
+
+};
+
+
+class FluidSolver {
+
+	FluidQuantity* d; 
+	FluidQuantity* u;
+	FluidQuantity* v;
+
+	int width; 
+	int height; 
+
+	double hx; 
+	double density; 
+
+	double* r; 
+	double* pressure; 
+
+	// Pressure right hand side as the negative divergence 
+	void buildRhs() {
+
+		double scale = 1.0 / hx; 
+
+		for (int y = 0, idx = 0; y < height; y++) {
+			for (int x = 0; x < width; x++, idx++) {
+				r[idx] = -scale * (u->at(x + 1, y) - u->at() + v->at() - v->at());
+			}
+		}
+	}
+
+
+	// Perform pressure solve using Gauss-Seidel 
+
+	void project(int limit, double timestep) {
+		
+		double scale = timestep / (density * hx * hx); 
+
+		double maxDelta; 
+
+		for (int iter = 0; iter < limit; iter++)
+		{
+			maxDelta = 0.0f; 
+			for (int y = 0, int idx = 0; y < height; y++) {
+				for (int x = 0; x < width; x++, idx++) {
+					int idx = x + y * width; 
+
+					double diag = 0.0f, offDiag = 0.0; 
+
+
+					// build the matrix implicitly as the five-point stencil, Grid boarders are assumed to be solid 
+
+					if (x > 0) {
+						diag += scale; 
+						offDiag -= scale * p; 
+					}
+				}
+			}
+		}
+	}
 
 };
