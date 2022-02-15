@@ -71,35 +71,41 @@ public:
 };
 
 
+// Set up Fluid quantities, forces incompressiblity, performs advection and adds inflows  
+
 class FluidSolver {
 
+	// Fluid Particles/ Quantities  
 	FluidQuantity* d; 
 	FluidQuantity* u;
 	FluidQuantity* v;
-
+	
+	// Width and Height  
 	int width; 
 	int height; 
-
+	// Grid cell size and fluid density 
 	double hx; 
 	double density; 
-
-	double* r; 
+	// r: right hand side of pressure solve ; pressure : pressure solution 
+	double* r;    
 	double* pressure; 
 
-	// Pressure right hand side as the negative divergence 
+	// 根据方程构建压力的右手作为负的散度 
 	void buildRhs() {
 
 		double scale = 1.0 / hx; 
 
 		for (int y = 0, idx = 0; y < height; y++) {
 			for (int x = 0; x < width; x++, idx++) {
-				r[idx] = -scale * (u->at(x + 1, y) - u->at() + v->at() - v->at());
+				r[idx] = -scale * (u->at(x + 1, y) - u->at(x, y) +
+					v->at(x, y + 1) - v->at(x, y));
 			}
 		}
 	}
 
 
-	// Perform pressure solve using Gauss-Seidel 
+	// Perform pressure solve using Gauss-Seidel  
+	// The solver will run as long as it takes to get the relative error below a threshold 
 
 	void project(int limit, double timestep) {
 		
