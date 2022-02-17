@@ -142,6 +142,9 @@
     <ClInclude Include="Source\Integrator\Integrator.h" />
     <ClInclude Include="Source\Integrator\PathTracing.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
