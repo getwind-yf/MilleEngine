@@ -21,6 +21,12 @@
     <ClInclude Include="Source\Integrator\Integrator.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Sampling.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

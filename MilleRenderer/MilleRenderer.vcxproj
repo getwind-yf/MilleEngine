@@ -139,8 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Sampling.h" />
     <ClInclude Include="Source\Integrator\Integrator.h" />
     <ClInclude Include="Source\Integrator\PathTracing.h" />
+    <ClInclude Include="Types.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
