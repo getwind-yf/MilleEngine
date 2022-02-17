@@ -110,7 +110,6 @@ class FluidSolver {
 	void project(int limit, double timestep) {
 		
 		double scale = timestep / (density * hx * hx); 
-
 		double maxDelta; 
 
 		for (int iter = 0; iter < limit; iter++)
@@ -123,13 +122,35 @@ class FluidSolver {
 					double diag = 0.0f, offDiag = 0.0; 
 
 
-					// build the matrix implicitly as the five-point stencil, Grid boarders are assumed to be solid 
+					// Build the matrix implicitly as the five-point stencil, Grid boarders are assumed to be solid 
+					// There is no fluid outside the simulation domain 
 
 					if (x > 0) {
-						diag += scale; 
-						offDiag -= scale * p; 
+						diag	+= scale; 
+						offDiag -= scale * pressure[idx -1];  
 					}
+					if (y > 0) {
+						diag += scale; 
+						offDiag -= scale * pressure[idx - width]; 
+					}
+					if (x < width - 1) {
+						diag += scale; 
+						offDiag -= scale * pressure[idx + 1]; 
+					}
+					if (y < height - 1) {
+						diag += scale; 
+						offDiag -= scale * pressure[idx + width]; 
+					}
+
+					double newP = (r[idx] - offDiag) / diag; 
+					maxDelta = max(maxDelta, fabs(pressure[idx] - newP)); 
+					pressure[idx] = newP; 
+
 				}
+			}
+
+			if (maxDelta < 1e-5) {
+				return; 
 			}
 		}
 	}
