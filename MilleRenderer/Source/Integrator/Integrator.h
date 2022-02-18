@@ -1,5 +1,56 @@
 #pragma once
 
+#include<vector>
+#include "../Core/Camera.h"
+
+
+
+
+typedef unsigned int uint; 
+typedef std::vector Array;
+
+
+enum class EIntegratorType
+{
+	DirectLighting, 
+	PathTracing, 
+	BidirectionalPathTracing, 
+	MultipixeledMLT, 
+	StochasticPPM 
+};
+
+enum class ESamplerType
+{
+	Random,
+	Sobol, 
+	Metropolis 
+};
+
+enum class EFilterType
+{
+	Box, 
+	Gaussian, 
+	MitchellNetravali 
+};
+
+
+// 输入数据的定义 
+
+struct RenderDesc
+{
+	CameraParams CameraParams; 
+	EIntegratorType IntegratorType; 
+	ESamplerType SamplerType; 
+	EFilterType FilterType; 
+	bool AdaptiveSample; 
+	bool UseRHF; 
+	uint ImageWidth, ImageHeight; 
+	uint SamplersPerPixel; 
+	uint MaxPathLength; 
+	Array<String> ModelPaths; 
+};
+
+
 namespace MilleRenderer
 {
 	class Integrator
