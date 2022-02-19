@@ -24,3 +24,8 @@ List of Features :
 
 - Sampler: (#TODO) 
 	- Sobol Sequence Sampler 
+
+
+Plan: 
+
+- Step1 : Basic Material & PT 
