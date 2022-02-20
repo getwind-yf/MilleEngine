@@ -109,9 +109,7 @@ namespace MRenderer
 		{
 			return 2; 
 		}
-
 	};
-
 
 	class LambertianDiffuse : public BSDF
 	{
