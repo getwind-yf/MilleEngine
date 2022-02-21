@@ -2,13 +2,7 @@
 
 #include<vector>
 #include "../Core/Camera.h"
-
-
-
-
-typedef unsigned int uint; 
-typedef std::vector Array;
-
+#include "../Utilities/Types.h"
 
 enum class EIntegratorType
 {

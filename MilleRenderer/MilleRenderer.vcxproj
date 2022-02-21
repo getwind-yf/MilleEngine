@@ -144,13 +144,22 @@
     <ClInclude Include="Source\Core\Camera.h" />
     <ClInclude Include="Source\Integrator\Integrator.h" />
     <ClInclude Include="Source\Integrator\PathTracing.h" />
-    <ClInclude Include="Types.h" />
+    <ClInclude Include="Source\Utilities\CameraBase.h" />
+    <ClInclude Include="Source\Utilities\Math\Constants.h" />
+    <ClInclude Include="Source\Utilities\Math\FFT.h" />
+    <ClInclude Include="Source\Utilities\Math\MilleMath.h" />
+    <ClInclude Include="Source\Utilities\Math\Ray.h" />
+    <ClInclude Include="Source\Utilities\Math\Vec2.h" />
+    <ClInclude Include="Source\Utilities\Math\Vec3.h" />
+    <ClInclude Include="Source\Utilities\Math\VecBase.h" />
+    <ClInclude Include="Source\Utilities\Types.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\BSDF.cpp" />
+    <ClCompile Include="Source\Utilities\Math\FFT.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

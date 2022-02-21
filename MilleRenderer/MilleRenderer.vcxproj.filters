@@ -21,9 +21,6 @@
     <ClInclude Include="Source\Integrator\Integrator.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Types.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Sampling.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -33,12 +30,42 @@
     <ClInclude Include="Source\Core\BSDF.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Utilities\CameraBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\Math\VecBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\Math\Vec2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\Math\Constants.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\Math\MilleMath.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\Types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\Math\FFT.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\Math\Ray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\Math\Vec3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\BSDF.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utilities\Math\FFT.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
