@@ -68,5 +68,8 @@
     <ClCompile Include="Source\Utilities\Math\FFT.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Integrator\Integrator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

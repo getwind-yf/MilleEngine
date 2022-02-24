@@ -159,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\BSDF.cpp" />
+    <ClCompile Include="Source\Integrator\Integrator.cpp" />
     <ClCompile Include="Source\Utilities\Math\FFT.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
