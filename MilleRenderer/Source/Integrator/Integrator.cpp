@@ -172,6 +172,17 @@ namespace MILLE
 	{
 		const Vector3& position = diffGeom.mPosition; 
 		const Vector3& normal = diffGeom.mNormal; 
+		const BSDF* pBSDF = diffGeom.mpBSDF; 
+		Vector3 vOut = -ray.mDir, vIn; 
+		float pdf; 
+
+		Color f = pBSDF->SampleScattered(vOut, Sample(), diffGeom, &vIn, &pdf, ScatterType(BSDF_REFLECTION | BSDF_SPECULAR)); 
+
+		Color color; 
+		if (pdf > 0.0f && !f.IsBlack() && Math::AbsDot(vIn, normal) != 0.0f)
+		{
+			RayDifferential rayRef = RayDifferential(position, vIn, diffGeom)
+		}
 
 	}
 
