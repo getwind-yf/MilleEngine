@@ -22,9 +22,6 @@ Steps for simple solver using Guass-Seidel Solver :
 
 
 
-
-
-
 class FluidQuantity {
 
 	double* _src; 
@@ -85,11 +82,20 @@ public:
 
 		// First step : euler integrate in time  
 
+
+
+
+
 		// Second step : Interpolate from grid  
 	}
 
 	// Sets fluid quantity inside the given rect  
 	void addInflow(double x0, double y0, double x1, double y1, double v) {
+
+		int ix0 = (int)(x0 / _hx - _ox); 
+		int iy0 = (int)(y0 / _hx - _oy); 
+		int ix1 = (int)(x1 / _hx - _ox);
+		int iy1 = (int)(y1 / _hx - _oy); 
 
 	}
 };
