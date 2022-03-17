@@ -5,6 +5,26 @@
 #include <stdio.h> 
 
 // Fluid Particles 
+
+/*
+
+Steps for simple solver using Guass-Seidel Solver : 
+- Add sources (inflows, body forces)
+- Force incompressiblity  ²»¿ÉÑ¹Ëõ 
+	- Build pressure right-hand side  
+	- Build pressure matrix 
+	- Solve for pressure 
+	- Apply pressure  
+- Advection 
+	- Semi-Lagrangian scheme  
+
+*/
+
+
+
+
+
+
 class FluidQuantity {
 
 	double* _src; 
