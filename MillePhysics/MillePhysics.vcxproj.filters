@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\SimpleFluid\Fuild.h">
+    <ClInclude Include="Source\SimpleFluid\Fuild.cpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
