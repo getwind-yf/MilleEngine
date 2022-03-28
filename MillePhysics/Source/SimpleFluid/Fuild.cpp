@@ -134,9 +134,64 @@ class FluidSolver {
 	double _hx; 
 	double _density; 
 
-	void buildRhs() {} 
+	double* _r; 
+	double* _p; 
 
-	void project() {} 
+	// pressure 
+	void buildRhs() {
+		double scale = 1.0 / _hx; 
+		for (int y = 0, idx = 0; y < _h; y++) {
+			for (int x = 0; x < _w; x++, idx++) {
+				_r[idx] = -scale * (_u->at(x + 1, y) - _u->at(x, y) +
+					                _v->at(x, y + 1) - _v->at(x, y));
+			}
+		}
+	} 
+
+	// Perform the pressure solve using GS method  
+	// limit iterations 
+	void project(int limit, double timestep) {
+		double scale = timestep / (_density * _hx * _hx); 
+		double maxDelta;   // threshold 
+
+		for (int iter = 0; iter < limit; iter++) {
+			maxDelta = 0; 
+			for (int y = 0, idx = 0; y < _h; y++) {
+				for (int x = 0; x < _w; x++, idx++) {
+					int idx = x + y * _w; 
+					double diag = 0.0, offDiag = 0.0; 
+
+					if (x > 0) {
+						diag += scale; 
+						offDiag -= scale * _p[idx - 1]; 
+					}
+					if (y > 0) {
+						diag += scale; 
+						offDiag -= scale * _p[idx - _w]; 
+					}
+					if (x < _w - 1) {
+						diag += scale; 
+						offDiag -= scale * _p[idx + 1]; 
+					}
+					if (y < _h - 1) {
+						diag += scale; 
+						offDiag -= scale * _p[idx + _w]; 
+					}
+
+					double newP = (_r[idx] - offDiag) / diag; 
+					maxDelta = std::max(maxDelta, fabs(_p[idx] - newP)); 
+					_p[idx] = newP; 
+				}
+			}
+
+			if (maxDelta < 1e-5) {
+				printf("Exiting solver after %d iterations, maximum change is %f\n ", iter, maxDelta);
+				return; 
+			}
+
+		}
+	
+	} 
 
 };
 
