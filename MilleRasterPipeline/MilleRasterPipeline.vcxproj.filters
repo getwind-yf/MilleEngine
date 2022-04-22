@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D3D12Utilities.h">
+    <ClInclude Include="D3D12Sample1.cpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
