@@ -82,21 +82,21 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCm
 
 	D3D_FEATURE_LEVEL  emFeatureLevel = D3D_FEATURE_LEVEL_12_1; 
 
-	ComPtr<IDXGIFactory5>		pIDXGIFactory5; 
-	ComPtr<IDXGIAdapter1>		pIAdapter1; 
-	ComPtr<ID3D12Device4>		pID3D12Device4; 
-	ComPtr<ID3D12CommandQueue>	pICMDQueue; 
-	ComPtr<IDXGISwapChain1>		pISwapChain1; 
-	ComPtr<IDXGISwapChain3>		pISwapChain3;
-	ComPtr<ID3D12DescriptorHeap> pIRTVHeap; 
-	ComPtr<ID3D12Resource>		pIARenderTargets[nFrameBackBufCount]; 
-	ComPtr<ID3D12RootSignature>		pIRootSignature; 
-	ComPtr<ID3D12PipelineState>		pIPipelineStates; 
+	ComPtr<IDXGIFactory5>				pIDXGIFactory5; 
+	ComPtr<IDXGIAdapter1>				pIAdapter1; 
+	ComPtr<ID3D12Device4>				pID3D12Device4; 
+	ComPtr<ID3D12CommandQueue>			pICMDQueue; 
+	ComPtr<IDXGISwapChain1>				pISwapChain1; 
+	ComPtr<IDXGISwapChain3>				pISwapChain3;
+	ComPtr<ID3D12DescriptorHeap>		pIRTVHeap; 
+	ComPtr<ID3D12Resource>				pIARenderTargets[nFrameBackBufCount]; 
+	ComPtr<ID3D12RootSignature>			pIRootSignature; 
+	ComPtr<ID3D12PipelineState>			pIPipelineStates; 
 
-	ComPtr<ID3D12CommandAllocator>	pICMDAlloc; 
-	ComPtr<ID3D12GraphicsCommandList> pICMDList; 
-	ComPtr<ID3D12Resource>		pIVertexBuffer; 
-	ComPtr<ID3D12Fence>		pIFence; 
+	ComPtr<ID3D12CommandAllocator>		pICMDAlloc; 
+	ComPtr<ID3D12GraphicsCommandList>	pICMDList; 
+	ComPtr<ID3D12Resource>				pIVertexBuffer; 
+	ComPtr<ID3D12Fence>					pIFence; 
 
 	try
 	{
