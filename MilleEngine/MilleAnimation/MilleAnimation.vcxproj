@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Learning\amp_agent.py" />
+    <None Include="Learning\layers_gen.py" />
     <None Include="Learning\MPISolver.py" />
     <None Include="Learning\solver.py" />
   </ItemGroup>
