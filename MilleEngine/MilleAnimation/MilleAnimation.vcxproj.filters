@@ -24,5 +24,6 @@
     <None Include="Learning\MPISolver.py" />
     <None Include="Learning\amp_agent.py" />
     <None Include="Learning\layers_gen.py" />
+    <None Include="Learning\tf_util.py" />
   </ItemGroup>
 </Project>

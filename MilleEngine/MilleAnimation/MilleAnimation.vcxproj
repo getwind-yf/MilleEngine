@@ -146,6 +146,7 @@
     <None Include="Learning\layers_gen.py" />
     <None Include="Learning\MPISolver.py" />
     <None Include="Learning\solver.py" />
+    <None Include="Learning\tf_util.py" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
