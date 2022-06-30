@@ -18,5 +18,22 @@
     <ClInclude Include="D3D12Sample1.cpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="UploadBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="UploadBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
